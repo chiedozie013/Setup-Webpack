@@ -13,15 +13,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.css$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
+  },
+  devServer: {
+    static: "./dist",
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Webpack App",
       filename: "index.html",
+      template: "./src/template.html",
     }),
   ],
 };
